@@ -1,3 +1,8 @@
+/**
+ * runme.c by Matthew Fritz
+ * Contains the implemented functionality for spot-checking our overall logic.
+ */
+
 #include <stdbool.h>
 #include <stdio.h>
 #include "card.h"

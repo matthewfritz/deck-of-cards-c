@@ -1,3 +1,8 @@
+/**
+ * card.h by Matthew Fritz
+ * Contains the data types and function definitions for handling Card instances.
+ */
+
 #ifndef DECK_OF_CARDS_CARD_H
 // intentionally *not* using "#pragma once" because of a small portability issue with certain compilers
 #define DECK_OF_CARDS_CARD_H

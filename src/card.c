@@ -1,3 +1,8 @@
+/**
+ * card.c by Matthew Fritz
+ * Contains the implemented functionality for handling Card instances.
+ */
+
 #include <math.h>
 #include <stdbool.h>
 #include "card.h"
