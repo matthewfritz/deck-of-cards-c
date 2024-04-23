@@ -9,7 +9,7 @@
 
 /**
  * Color enum
- * Contains the set of all valid colors that a card may possess. 
+ * Contains the set of all valid colors that a card may possess.
  */
 enum Color {
    BLACK = 'b',
@@ -18,7 +18,7 @@ enum Color {
 
 /**
  * Suit enum
- * Contains the set of all valid suits that a card may possess. 
+ * Contains the set of all valid suits that a card may possess.
  */
 enum Suit {
    CLUB = 'c',
