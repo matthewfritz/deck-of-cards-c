@@ -1,5 +1,5 @@
 /**
- * deck.h by Matthew Fritz
+ * deck.h by Matthew Fritz <https://github.com/matthewfritz>
  * Contains the data types and function definitions for handling Deck instances.
  */
 

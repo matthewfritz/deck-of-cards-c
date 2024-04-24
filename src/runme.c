@@ -1,5 +1,5 @@
 /**
- * runme.c by Matthew Fritz
+ * runme.c by Matthew Fritz <https://github.com/matthewfritz>
  * Contains the implemented functionality for spot-checking our overall logic.
  */
 
@@ -8,7 +8,14 @@
 #include "card.h"
 
 int main() {
-   enum Suit mySuit = SPADE;
-   printf("Suit: %c\n", mySuit);
+   struct Card* myCard = createCard(ACE, SPADE);
+   printf("My card suit: %c\n", myCard->suit);
+
+   printf("Card to string: ");
+   printCard(myCard);
+   printf("\n");
+
+   freeCard(myCard);
+
    return 0;
 }

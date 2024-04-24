@@ -1,5 +1,5 @@
 /**
- * hand.c by Matthew Fritz
+ * hand.c by Matthew Fritz <https://github.com/matthewfritz>
  * Contains the implemented functionality for handling Hand instances.
  */
 
