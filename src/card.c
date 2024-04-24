@@ -10,7 +10,7 @@
 #include "card.h"
 
 struct Card* createCard(enum Value value, enum Suit suit) {
-   struct Card* newCard = malloc(sizeof(struct Card));
+   struct Card* newCard = (struct Card *)malloc(sizeof(struct Card));
    newCard->value = value;
    newCard->suit = suit;
    return newCard;
