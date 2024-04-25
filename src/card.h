@@ -35,7 +35,7 @@ struct Card* createCard(enum Value value, enum Suit suit);
 
 /**
  * Frees the memory allocated from the createCard() function and sets the provided pointer to NULL.
- * 
+ *
  * @param card Pointer to a Card instance
  * @see createCard()
  */
@@ -73,7 +73,7 @@ void printCard(struct Card* card);
  *
  * @param c1 The first card to check
  * @param c2 The second card to check
- * 
+ *
  * @return int
  */
 int valueDifference(struct Card* c1, struct Card* c2);

@@ -20,7 +20,7 @@ struct Deck {
 
 /**
  * Counts the number of cards in the provided Deck and returns the count.
- * 
+ *
  * @param deck The deck where the cards will be counted
  * @return int
  */
@@ -51,7 +51,7 @@ struct Deck* createDefaultDeck();
 /**
  * Draws and returns the next card from the deck. This also updates the internal pointer of the Deck instance by one.
  * This can also return NULL if the deck itself is invalid or if there are no more cards to draw.
- * 
+ *
  * @param deck The deck from which a card will be drawn
  * @return Card*
  */
@@ -60,7 +60,7 @@ struct Card* drawCard(struct Deck* deck);
 /**
  * Frees the memory allocated from the createDeck() function and sets the provided pointer to NULL. This also frees
  * the entirety of the internal Card pointers too.
- * 
+ *
  * @param deck Pointer to a Deck instance
  * @see createDeck()
  * @see createDefaultDeck()
@@ -69,7 +69,7 @@ void freeDeck(struct Deck* deck);
 
 /**
  * Returns a boolean describing whether the provided deck contains more cards that can be drawn.
- * 
+ *
  * @param deck The deck to check
  * @return bool
  */
