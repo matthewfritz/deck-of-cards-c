@@ -91,10 +91,7 @@ bool hasMoreCards(struct Deck* deck) {
    if(deck == NULL) {
       return false;
    }
-   if(deck->pointer < 0 || deck->pointer >= countCards(deck)) {
-      return false;
-   }
-   return true;
+   return deck->pointer >= 0 && deck->pointer < countCards(deck);
 }
 
 void printCardsInDeck(struct Deck* deck) {
