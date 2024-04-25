@@ -3,40 +3,12 @@
  * Contains the data types and function definitions for handling Card instances.
  */
 
+#include "suit.h"
+#include "value.h"
+
 #ifndef DECK_OF_CARDS_CARD_H
 // intentionally *not* using "#pragma once" because of a small portability issue with certain compilers
 #define DECK_OF_CARDS_CARD_H
-
-/**
- * Suit enum
- * Contains the set of all valid suits that a card may possess.
- */
-enum Suit {
-   CLUB = 'c',
-   DIAMOND = 'd',
-   HEART = 'h',
-   SPADE = 's'
-};
-
-/**
- * Value enum
- * Contains the set of all valid values that a card may possess.
- */
-enum Value {
-   ACE = 1,
-   TWO,
-   THREE,
-   FOUR,
-   FIVE,
-   SIX,
-   SEVEN,
-   EIGHT,
-   NINE,
-   TEN,
-   JACK,
-   QUEEN,
-   KING
-};
 
 /**
  * Card struct
