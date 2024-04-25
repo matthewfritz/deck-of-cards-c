@@ -22,7 +22,8 @@ struct Card {
 
 /**
  * Creates and returns a Card instance with the given value and suit. This uses malloc() so be sure to free the
- * memory with freeCard() when you are finished with the resource.
+ * memory with freeCard() when you are finished with the resource. This can also return NULL if something goes
+ * wrong during memory allocation.
  *
  * @param value The value of the card
  * @param suit The suit of the card

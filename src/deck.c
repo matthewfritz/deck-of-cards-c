@@ -17,6 +17,9 @@ int countCards(struct Deck* deck) {
    if(deck == NULL) {
       return 0;
    }
+   if (deck->cards == NULL) {
+      return 0;
+   }
    return sizeof(deck->cards) / sizeof(struct Card);
 }
 

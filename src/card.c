@@ -13,6 +13,9 @@
 
 struct Card* createCard(enum Value value, enum Suit suit) {
    struct Card* newCard = (struct Card *)malloc(sizeof(struct Card));
+   if (newCard == NULL) {
+      return NULL;
+   }
    newCard->value = value;
    newCard->suit = suit;
    return newCard;
@@ -24,17 +27,29 @@ void freeCard(struct Card* card) {
 }
 
 bool hasSameSuit(struct Card* c1, struct Card* c2) {
+   if (c1 == NULL || c2 == NULL) {
+      return false;
+   }
    return c1->suit == c2->suit;
 }
 
 bool hasSameValue(struct Card* c1, struct Card* c2) {
+   if (c1 == NULL || c2 == NULL) {
+      return false;
+   }
    return valueDifference(c1, c2) == 0;
 }
 
 void printCard(struct Card* card) {
+   if (card == NULL) {
+      return;
+   }
    printf("%d%c", card->value, card->suit);
 }
 
 int valueDifference(struct Card* c1, struct Card* c2) {
+   if (c1 == NULL || c2 == NULL) {
+      return 0;
+   }
    return abs(c1->value - c2->value);
 }
