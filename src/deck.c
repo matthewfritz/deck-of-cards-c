@@ -37,6 +37,12 @@ struct Deck* createDeck(int numDecks) {
       return NULL;
    }
    newDeck->cards = (struct Card **)malloc(totalCardsSize);
+   if(newDeck->cards == NULL) {
+      // weird case but we want to ensure the calling code realizes there was an error without also
+      // causing undocumented behavior in it unintentionally too
+      freeDeck(newDeck);
+      return NULL;
+   }
 
    // initialize the cards in the deck(s)
    int cardIndex = 0;
