@@ -3,6 +3,7 @@
  * Contains the data types and function definitions for handling Card instances.
  */
 
+#include <stdbool.h>
 #include "suit.h"
 #include "value.h"
 
@@ -26,7 +27,7 @@ struct Card {
  * @param value The value of the card
  * @param suit The suit of the card
  *
- * @return Card
+ * @return Card*
  * @see freeCard()
  */
 struct Card* createCard(enum Value value, enum Suit suit);

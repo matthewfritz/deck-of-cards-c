@@ -26,4 +26,10 @@ enum Value {
    KING
 };
 
+/**
+ * ALL_VALUES constant
+ * Array containing all valid values for cards.
+ */
+extern const enum Value ALL_VALUES[13];
+
 #endif // DECK_OF_CARDS_VALUE_H

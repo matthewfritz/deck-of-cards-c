@@ -5,10 +5,6 @@
 
 #include "suit.h"
 
-/**
- * ALL_SUITS constant
- * Array containing all valid suits for cards.
- */
 const enum Suit ALL_SUITS[4] = {
    CLUB,
    DIAMOND,

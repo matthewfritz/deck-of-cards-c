@@ -17,4 +17,10 @@ enum Suit {
    SPADE = 's'
 };
 
+/**
+ * ALL_SUITS constant
+ * Array containing all valid suits for cards.
+ */
+extern const enum Suit ALL_SUITS[4];
+
 #endif // DECK_OF_CARDS_SUIT_H

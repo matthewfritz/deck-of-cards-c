@@ -5,10 +5,6 @@
 
 #include "value.h"
 
-/**
- * ALL_VALUES constant
- * Array containing all valid values for cards.
- */
 const enum Value ALL_VALUES[13] = {
    ACE,
    TWO,
