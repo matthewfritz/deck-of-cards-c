@@ -76,18 +76,25 @@ void freeDeck(struct Deck* deck);
 bool hasMoreCards(struct Deck* deck);
 
 /**
- * Prints the cards in the deck, one per line depending on the boolean, to stdout.
- * 
- * @param deck The deck containing the cards to print
- * @param addNewLine True to add a newline character after each card, false to omit the newline
- */
-void printCardsInDeckLines(struct Deck* deck, bool addNewLine);
-
-/**
  * Prints the cards in the deck to a single line in stdout.
- * 
+ *
  * @param deck The deck containing the cards to print
  */
 void printCardsInDeck(struct Deck* deck);
+
+/**
+ * Prints the cards in the deck, one per line depending on the boolean, to stdout.
+ *
+ * @param deck The deck containing the cards to print
+ * @param addNewLine True to add a newline character after each card, false to omit the newline
+ */
+void printCardsInDeckByLine(struct Deck* deck, bool addNewLine);
+
+/**
+ * Prints the cards in the deck, one per line, to stdout.
+ *
+ * @param deck The deck containing the cards to print
+ */
+void printCardsInDeckFormatted(struct Deck* deck);
 
 #endif // DECK_OF_CARDS_DECK_H

@@ -84,7 +84,11 @@ bool hasMoreCards(struct Deck* deck) {
    return true;
 }
 
-void printCardsInDeckLines(struct Deck* deck, bool addNewLine) {
+void printCardsInDeck(struct Deck* deck) {
+   printCardsInDeckByLine(deck, false);
+}
+
+void printCardsInDeckByLine(struct Deck* deck, bool addNewLine) {
    if(deck == NULL) {
       return;
    }
@@ -97,6 +101,6 @@ void printCardsInDeckLines(struct Deck* deck, bool addNewLine) {
    }
 }
 
-void printCardsInDeck(struct Deck* deck) {
-   printCardsInDeckLines(deck, false);
+void printCardsInDeckFormatted(struct Deck* deck) {
+   printCardsInDeckByLine(deck, true);
 }
