@@ -13,6 +13,13 @@
 #include "suit.h"
 #include "value.h"
 
+bool canDraw(struct Deck* deck) {
+   if(deck == NULL) {
+      return false;
+   }
+   return deck->pointer >= 0 && deck->pointer < countCards(deck);
+}
+
 int countCards(struct Deck* deck) {
    if(deck == NULL) {
       return 0;
@@ -65,8 +72,10 @@ struct Deck* createDefaultDeck() {
    return createDeck(1);
 }
 
+
+
 struct Card* drawCard(struct Deck* deck) {
-   if(!hasMoreCards(deck)) {
+   if(!canDraw(deck)) {
       return NULL;
    }
    return deck->cards[deck->pointer++];
@@ -88,10 +97,14 @@ void freeDeck(struct Deck* deck) {
 }
 
 bool hasMoreCards(struct Deck* deck) {
-   if(deck == NULL) {
+   return hasMoreCardsMinimum(deck, 1);
+}
+
+bool hasMoreCardsMinimum(struct Deck* deck, int minimum) {
+   if(deck == NULL || minimum < 0) {
       return false;
    }
-   return deck->pointer >= 0 && deck->pointer < countCards(deck);
+   return deck->pointer >= 0 && deck->pointer < countCards(deck) - minimum;
 }
 
 void printCardsInDeck(struct Deck* deck) {

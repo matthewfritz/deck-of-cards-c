@@ -20,6 +20,14 @@ struct Deck {
 };
 
 /**
+ * Returns whether a card can be drawn from the provided deck.
+ *
+ * @param deck The deck from which a card will be drawn
+ * @return bool
+ */
+bool canDraw(struct Deck* deck);
+
+/**
  * Returns the number of cards in the provided Deck after doing some pointer checks.
  *
  * @param deck The deck where the cards will be counted
@@ -69,12 +77,24 @@ struct Card* drawCard(struct Deck* deck);
 void freeDeck(struct Deck* deck);
 
 /**
- * Returns a boolean describing whether the provided deck contains more cards that can be drawn.
+ * Returns a boolean describing whether the provided deck contains at least one more card that can be drawn after
+ * the current position of the internal pointer before the end of the deck is reached.
  *
  * @param deck The deck to check
  * @return bool
  */
 bool hasMoreCards(struct Deck* deck);
+
+/**
+ * Returns a boolean describing whether the provided deck contains the minimum additional amount of cards that can
+ * be drawn after the current position of the internal pointer before the end of the deck is reached.
+ *
+ * @param deck The deck to check
+ * @param minimum The minimum number of cards to check
+ *
+ * @return bool
+ */
+bool hasMoreCardsMinimum(struct Deck* deck, int minimum);
 
 /**
  * Prints the cards in the deck to a single line in stdout.
