@@ -14,10 +14,7 @@
 #include "value.h"
 
 bool canDraw(struct Deck* deck) {
-   if(deck == NULL) {
-      return false;
-   }
-   return deck->pointer >= 0 && deck->pointer < countCards(deck);
+   return hasMoreCardsMinimum(deck, 0);
 }
 
 int countCards(struct Deck* deck) {
@@ -71,8 +68,6 @@ struct Deck* createDeck(int numDecks) {
 struct Deck* createDefaultDeck() {
    return createDeck(1);
 }
-
-
 
 struct Card* drawCard(struct Deck* deck) {
    if(!canDraw(deck)) {
