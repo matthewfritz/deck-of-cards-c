@@ -14,12 +14,13 @@
  */
 struct Deck {
    struct Card** cards; // array of card pointers inside the deck
+   int count; // number of cards in the deck
    int pointer; // pointer to the current index in the cards array
    int numDecks; // number of "decks" that make up this deck (technically it's a "shoe")
 };
 
 /**
- * Counts the number of cards in the provided Deck and returns the count.
+ * Returns the number of cards in the provided Deck after doing some pointer checks.
  *
  * @param deck The deck where the cards will be counted
  * @return int

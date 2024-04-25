@@ -20,7 +20,7 @@ int countCards(struct Deck* deck) {
    if (deck->cards == NULL) {
       return 0;
    }
-   return sizeof(deck->cards) / sizeof(struct Card);
+   return deck->count;
 }
 
 struct Deck* createDeck(int numDecks) {
@@ -36,17 +36,21 @@ struct Deck* createDeck(int numDecks) {
    if(newDeck == NULL) {
       return NULL;
    }
+   newDeck->cards = (struct Card **)malloc(totalCardsSize);
 
-   // initialize the cards in the deck
+   // initialize the cards in the deck(s)
    int cardIndex = 0;
-   for(int suitIndex = 0; suitIndex < numSuits; suitIndex++) {
-      for(int valueIndex = 0; valueIndex < numValues; valueIndex++) {
-         newDeck->cards[cardIndex] = createCard(ALL_VALUES[valueIndex], ALL_SUITS[suitIndex]);
-         cardIndex++; // we could do a calculation using the loop indices but this is just more readable
+   for(int deckIndex = 0; deckIndex < numDecks; deckIndex++) {
+      for(int suitIndex = 0; suitIndex < numSuits; suitIndex++) {
+         for(int valueIndex = 0; valueIndex < numValues; valueIndex++) {
+            newDeck->cards[cardIndex] = createCard(ALL_VALUES[valueIndex], ALL_SUITS[suitIndex]);
+            cardIndex++; // we could do a calculation using the loop indices but this is just more readable
+         }
       }
    }
 
    newDeck->numDecks = numDecks;
+   newDeck->count = cardIndex;
    newDeck->pointer = 0;
    return newDeck;
 }
@@ -67,6 +71,9 @@ void freeDeck(struct Deck* deck) {
    int numCards = countCards(deck);
    for(int i = 0; i < numCards; i++) {
       freeCard(deck->cards[i]);
+   }
+   if(deck != NULL) {
+      free(deck->cards);
    }
 
    // now free the rest of the memory in the deck
