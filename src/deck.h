@@ -4,6 +4,7 @@
  */
 
 #include <stdbool.h>
+#include "card.h"
 
 #ifndef DECK_OF_CARDS_DECK_H
 #define DECK_OF_CARDS_DECK_H
