@@ -54,6 +54,12 @@ struct Deck* createDeck(int numDecks) {
       for(int suitIndex = 0; suitIndex < numSuits; suitIndex++) {
          for(int valueIndex = 0; valueIndex < numValues; valueIndex++) {
             newDeck->cards[cardIndex] = createCard(ALL_VALUES[valueIndex], ALL_SUITS[suitIndex]);
+            if (newDeck->cards[cardIndex] == NULL) {
+               // free the rest of the deck immediately and bounce out so we don't get into a weird half-in/half-out
+               // state where some card pointers are valid and other card pointers are NULL down the line
+               freeDeck(newDeck);
+               return NULL;
+            }
             cardIndex++; // we could do a calculation using the loop indices but this is just more readable
          }
       }
