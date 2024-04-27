@@ -37,28 +37,6 @@ bool canDraw(struct Deck* deck);
 int countCards(struct Deck* deck);
 
 /**
- * Creates and returns a Deck instance containing the given number of decks inside. This uses malloc() so be sure to
- * free the memory with freeDeck() when you are finished with the resource. This can also return NULL if something
- * goes wrong during memory allocation.
- *
- * @param numDecks The number of decks to create; this will be multiplied together with the total suits and values
- *
- * @return Deck*
- * @see freeDeck()
- */
-struct Deck* createDeck(int numDecks);
-
-/**
- * Creates and returns a Deck instance containing just a single deck inside (the default). This uses malloc() so be
- * sure to free the memory with freeDeck() when you are finished with the resource. This can also return NULL if
- * something goes wrong during memory allocation.
- *
- * @return Deck*
- * @see freeDeck()
- */
-struct Deck* createDefaultDeck();
-
-/**
  * Draws and returns the next card from the deck. This also updates the internal pointer of the Deck instance by one.
  * This can also return NULL if the deck itself is invalid or if there are no more cards to draw.
  *
@@ -68,12 +46,12 @@ struct Deck* createDefaultDeck();
 struct Card* drawCard(struct Deck* deck);
 
 /**
- * Frees the memory allocated from the createDeck() function and sets the provided pointer to NULL. This also frees
+ * Frees the memory allocated from the makeDeck() function and sets the provided pointer to NULL. This also frees
  * the entirety of the internal Card pointers too.
  *
  * @param deck Pointer to a Deck instance
- * @see createDeck()
- * @see createDefaultDeck()
+ * @see makeDeck()
+ * @see makeDefaultDeck()
  */
 void freeDeck(struct Deck* deck);
 
@@ -96,6 +74,28 @@ bool hasMoreCards(struct Deck* deck);
  * @return bool
  */
 bool hasMoreCardsMinimum(struct Deck* deck, int minimum);
+
+/**
+ * Creates and returns a Deck instance containing the given number of decks inside. This uses malloc() so be sure to
+ * free the memory with freeDeck() when you are finished with the resource. This can also return NULL if something
+ * goes wrong during memory allocation.
+ *
+ * @param numDecks The number of decks to create; this will be multiplied together with the total suits and values
+ *
+ * @return Deck*
+ * @see freeDeck()
+ */
+struct Deck* makeDeck(int numDecks);
+
+/**
+ * Creates and returns a Deck instance containing just a single deck inside (the default). This uses malloc() so be
+ * sure to free the memory with freeDeck() when you are finished with the resource. This can also return NULL if
+ * something goes wrong during memory allocation.
+ *
+ * @return Deck*
+ * @see freeDeck()
+ */
+struct Deck* makeDefaultDeck();
 
 /**
  * Prints the cards in the deck to a single line in stdout.

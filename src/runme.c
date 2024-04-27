@@ -9,7 +9,7 @@
 #include "deck.h"
 
 int main() {
-   struct Card* myCard = createCard(ACE, SPADE);
+   struct Card* myCard = makeCard(ACE, SPADE);
    printf("My card suit: %c\n", myCard->suit);
 
    printf("Card to string: ");
@@ -18,7 +18,7 @@ int main() {
 
    freeCard(myCard);
 
-   struct Deck* myDeck = createDefaultDeck();
+   struct Deck* myDeck = makeDefaultDeck();
    printf("Cards in deck:\n");
    printCardsInDeckFormatted(myDeck);
    printf("Num cards: %d\n", countCards(myDeck));

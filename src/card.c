@@ -11,16 +11,6 @@
 #include <stdlib.h>
 #include "card.h"
 
-struct Card* createCard(enum Value value, enum Suit suit) {
-   struct Card* newCard = (struct Card *)malloc(sizeof(struct Card));
-   if (newCard == NULL) {
-      return NULL;
-   }
-   newCard->value = value;
-   newCard->suit = suit;
-   return newCard;
-}
-
 void freeCard(struct Card* card) {
    free(card);
    card = NULL;
@@ -38,6 +28,16 @@ bool hasSameValue(struct Card* c1, struct Card* c2) {
       return false;
    }
    return valueDifference(c1, c2) == 0;
+}
+
+struct Card* makeCard(enum Value value, enum Suit suit) {
+   struct Card* newCard = (struct Card *)malloc(sizeof(struct Card));
+   if (newCard == NULL) {
+      return NULL;
+   }
+   newCard->value = value;
+   newCard->suit = suit;
+   return newCard;
 }
 
 void printCard(struct Card* card) {

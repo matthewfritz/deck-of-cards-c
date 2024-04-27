@@ -21,23 +21,10 @@ struct Card {
 };
 
 /**
- * Creates and returns a Card instance with the given value and suit. This uses malloc() so be sure to free the
- * memory with freeCard() when you are finished with the resource. This can also return NULL if something goes
- * wrong during memory allocation.
- *
- * @param value The value of the card
- * @param suit The suit of the card
- *
- * @return Card*
- * @see freeCard()
- */
-struct Card* createCard(enum Value value, enum Suit suit);
-
-/**
- * Frees the memory allocated from the createCard() function and sets the provided pointer to NULL.
+ * Frees the memory allocated from the makeCard() function and sets the provided pointer to NULL.
  *
  * @param card Pointer to a Card instance
- * @see createCard()
+ * @see makeCard()
  */
 void freeCard(struct Card* card);
 
@@ -60,6 +47,19 @@ bool hasSameSuit(struct Card* c1, struct Card* c2);
  * @return bool
  */
 bool hasSameValue(struct Card* c1, struct Card* c2);
+
+/**
+ * Creates and returns a Card instance with the given value and suit. This uses malloc() so be sure to free the
+ * memory with freeCard() when you are finished with the resource. This can also return NULL if something goes
+ * wrong during memory allocation.
+ *
+ * @param value The value of the card
+ * @param suit The suit of the card
+ *
+ * @return Card*
+ * @see freeCard()
+ */
+struct Card* makeCard(enum Value value, enum Suit suit);
 
 /**
  * Prints a string representation of the Card instance to stdout.
